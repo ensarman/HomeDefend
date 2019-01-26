@@ -154,7 +154,7 @@
                 <action id="-9" name="Destroy" sid="777523295259940" type="balaEscudo" />
                 <action id="0" name="Spawn another object" sid="722831961889974" type="balaEscudo">
                     <param id="0" name="Object">escudo</param>
-                    <param id="1" name="Layer">0</param>
+                    <param id="1" name="Layer">1</param>
                     <param id="2" name="Image point">0</param>
                 </action>
             </actions>

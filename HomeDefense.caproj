@@ -23,8 +23,8 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
     </used-behaviors>
     <used-effects />
@@ -282,8 +282,8 @@
         <event-sheet>Event sheet 2.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Keyboard" uid="2" />
-        <global-instance type="Mouse" uid="3" />
+        <global-instance type="Keyboard" uid="14" />
+        <global-instance type="Mouse" uid="17" />
     </global-instances>
     <sounds-folder />
     <music-folder />
