@@ -25,23 +25,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="719843597377720">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="629506480698614" type="Keyboard">
-                    <param id="0" name="Key">39</param>
-                </condition>
-                <condition id="-1" name="Every tick" sid="535138015643985" type="System" />
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="274963312922746" type="Torreta">
-                    <param id="0" name="X">Torreta.X+12</param>
-                </action>
-                <action id="4" name="Set animation" sid="137579012308951" type="Torreta">
-                    <param id="0" name="Animation">&quot;mvder&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="748764420915011">
             <conditions>
                 <condition id="0" name="On key pressed" sid="141938380094499" type="Keyboard">
@@ -54,13 +37,25 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="719843597377720">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="629506480698614" type="Keyboard" />
+                <condition id="-1" name="Every tick" sid="535138015643985" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="137579012308951" type="Torreta">
+                    <param id="0" name="Animation">&quot;mvder&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="246014845011862">
             <conditions>
                 <condition id="-1" name="Every tick" sid="872162650768905" type="System" />
                 <condition id="-21" name="Is between values" sid="692774276953863" type="System">
                     <param id="0" name="Value">Mouse.Y</param>
                     <param id="1" name="Lower bound">0</param>
-                    <param id="2" name="Upper bound">400</param>
+                    <param id="2" name="Upper bound">Torreta.Y</param>
                 </condition>
             </conditions>
             <actions>
@@ -68,6 +63,114 @@
                     <param id="0" name="X">Mouse.X</param>
                     <param id="1" name="Y">Mouse.Y</param>
                 </action>
+            </actions>
+        </event-block>
+        <event-block sid="591723969572086">
+            <conditions>
+                <condition id="2" name="Key is down" sid="570097148602951" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="503785122578337" type="Torreta">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="131493555085508">
+            <conditions>
+                <condition id="2" name="Key is down" sid="302180827255822" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="948641791788781" type="Torreta">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="596078865879432">
+            <conditions>
+                <condition id="2" name="Key is down" sid="934127263064780" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="281975384758538" type="Torreta">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="408851318856520">
+            <conditions>
+                <condition id="2" name="Key is down" sid="646877030363675" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="377896164616972" type="Torreta">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="827699147647234">
+            <conditions>
+                <condition id="0" name="On click" sid="478231626215516" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="512606861174616" type="System">
+                    <param id="0" name="First value">Torreta.numeroEscudos</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="545243453033084" type="Torreta">
+                    <param id="0" name="Object">balaEscudo</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="602975961647589" type="balaEscudo">
+                    <param id="0" name="Angle">Torreta.Angle</param>
+                </action>
+                <action id="-11" name="Add to" sid="413739165129231" type="Torreta">
+                    <param id="0" name="Instance variable">numeroEscudos</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="198628985157861" type="escudo">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="878691363544158">
+            <conditions>
+                <condition behavior="Bullet" id="0" name="Compare speed" sid="416982117429915" type="balaEscudo">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="777523295259940" type="balaEscudo" />
+                <action id="0" name="Spawn another object" sid="722831961889974" type="balaEscudo">
+                    <param id="0" name="Object">escudo</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="496149921166984">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="282855706803373" type="escudo">
+                    <param id="0" name="Object">Bala_l</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="405001276842820" type="Bala_l">
+                    <param id="0" name="Animation">&quot;Destruccion&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="785481184695312" type="Bala_l" />
             </actions>
         </event-block>
     </events>
