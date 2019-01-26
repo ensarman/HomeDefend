@@ -170,6 +170,12 @@
                     <param id="0" name="Animation">&quot;Destruccion&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
+                <action id="11" name="Set collisions enabled" sid="893947231642793" type="Bala_l">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="129799368937659" type="Bala_l">
+                    <param id="0" name="Speed">0</param>
+                </action>
                 <action id="-9" name="Destroy" sid="785481184695312" type="Bala_l" />
             </actions>
         </event-block>
