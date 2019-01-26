@@ -24,8 +24,8 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -94,8 +94,8 @@
                 <behavior-type name="Bullet" sid="589431187187224">
                     <behavior id="Bullet" />
                 </behavior-type>
-                <behavior-type name="Physics" sid="552846254367206">
-                    <behavior id="Physics" />
+                <behavior-type name="DestroyOutsideLayout" sid="710844623700044">
+                    <behavior id="destroy" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -110,7 +110,7 @@
                     </frame>
                 </animation>
                 <animation framecount="4" loop="1" name="Destruccion" pingpong="0" repeatcount="1" repeatto="0" sid="364763755377862" speed="20">
-                    <frame duration="1" hotspotX="0.311688" hotspotY="0.6">
+                    <frame duration="1" hotspotX="0.321429" hotspotY="0.612903">
                         <collision-poly>
                             <point x="1" y="0" />
                             <point x="0" y="0.2492" />
@@ -118,7 +118,7 @@
                             <point x="1" y="1" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.311688" hotspotY="0.480769">
+                    <frame duration="1" hotspotX="0.3" hotspotY="0.480519">
                         <collision-poly>
                             <point x="0.80722" y="0" />
                             <point x="0" y="0.153846" />
@@ -126,7 +126,7 @@
                             <point x="0.832726" y="1" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.827586" hotspotY="0.516129">
+                    <frame duration="1" hotspotX="0.826923" hotspotY="0.519481">
                         <collision-poly>
                             <point x="0.815724" y="0" />
                             <point x="0" y="0.289806" />
@@ -134,7 +134,7 @@
                             <point x="1" y="0.84" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.548387" hotspotY="0.535714">
+                    <frame duration="1" hotspotX="0.548387" hotspotY="0.551724">
                         <collision-poly>
                             <point x="1" y="0.0172868" />
                             <point x="0" y="0.0351428" />
@@ -151,8 +151,11 @@
         <object-type name="Mouse" sid="503804457166086">
             <plugin id="Mouse" />
         </object-type>
-        <object-type name="Sprite" sid="557241110529609">
+        <object-type name="enemigo1" sid="557241110529609">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="velocidad" sid="298507734734175" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="824923517894972" speed="5">
                     <frame duration="1" hotspotX="0.484127" hotspotY="0.404762" original-source="E:\ggj\Enemigo1.png">
