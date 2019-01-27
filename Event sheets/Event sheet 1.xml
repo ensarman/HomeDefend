@@ -39,15 +39,9 @@
         </event-block>
         <event-block sid="719843597377720">
             <conditions>
-                <condition id="1" name="On any key pressed" sid="629506480698614" type="Keyboard" />
                 <condition id="-1" name="Every tick" sid="535138015643985" type="System" />
             </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="137579012308951" type="Torreta">
-                    <param id="0" name="Animation">&quot;mvder&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block sid="246014845011862">
             <conditions>
