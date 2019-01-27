@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -24,10 +25,16 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="multiply">Multiply</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -65,6 +72,9 @@
                 </behavior-type>
                 <behavior-type name="8Direction" sid="916856000559167">
                     <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="614087147922248">
+                    <behavior id="Pathfinding" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -156,8 +166,24 @@
             <instance-variables>
                 <instance-variable name="velocidad" sid="298507734734175" type="number" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Wrap" sid="483889034302057">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="322647972104060">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="482163593691954">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Multiply">
+                    <effect id="multiply" />
+                </effect-type>
+            </effects>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="824923517894972" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="824923517894972" speed="5">
                     <frame duration="1" hotspotX="0.484127" hotspotY="0.404762" original-source="E:\ggj\Enemigo1.png">
                         <collision-poly>
                             <point x="0" y="0.0595236" />
@@ -166,6 +192,7 @@
                             <point x="0" y="0.952381" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -220,6 +247,11 @@
         </object-type>
         <object-type name="escudo" sid="295965268445782">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="525469466233168">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="488854983384365" speed="5">
                     <frame duration="1" hotspotX="3.16667" hotspotY="0.48" />
@@ -272,7 +304,45 @@
         </object-type>
         <object-type name="TiledBackground5" sid="315876424086814">
             <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Persist" sid="412285077629014">
+                    <behavior id="Persist" />
+                </behavior-type>
+            </behaviors>
             <texture />
+        </object-type>
+        <object-type name="CreateEnemy" sid="809404583981331">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="linea" sid="726617684573682">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="938239860762689">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="716952627706736" speed="5">
+                    <frame duration="1" hotspotX="0.916667" hotspotY="0.483607" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="oleadaTXT" sid="991976168413527">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="monster1" sid="660126102546748">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="401372121282848" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="1" name="caminata" pingpong="0" repeatcount="1" repeatto="0" sid="715751418892022" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -287,6 +357,7 @@
     <global-instances>
         <global-instance type="Keyboard" uid="14" />
         <global-instance type="Mouse" uid="17" />
+        <global-instance type="CreateEnemy" uid="19" />
     </global-instances>
     <sounds-folder />
     <music-folder />
