@@ -247,6 +247,9 @@
         </object-type>
         <object-type name="escudo" sid="295965268445782">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="vida" sid="621517796362009" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="525469466233168">
                     <behavior id="solid" />
@@ -332,6 +335,11 @@
         </object-type>
         <object-type name="monster1" sid="660126102546748">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="957645582405178">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="401372121282848" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />

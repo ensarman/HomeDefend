@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="vidaEscudo" sid="585167501129634" static="0" type="number">10</variable>
         <variable constant="0" name="velocidadEnemigos" sid="546119577652963" static="0" type="number">0</variable>
         <variable constant="0" name="enemigos" sid="803325531198348" static="0" type="number">1</variable>
         <variable constant="0" name="oleada" sid="162245701439225" static="0" type="number">1</variable>
@@ -142,6 +143,33 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="835748073889023">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="628839130700394" type="escudo">
+                            <param id="0" name="Object">monster1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="549754660784702" type="escudo">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="565959442285716">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="937270504681605" type="System">
+                                    <param id="0" name="First value">escudo.vida</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="201830053135195" type="escudo" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="361342843472112" title="timers">
@@ -262,9 +290,6 @@
                         </action>
                         <action id="0" name="Set text" sid="324724992399991" type="oleadaTXT">
                             <param id="0" name="Text">str(oleada)</param>
-                        </action>
-                        <action behavior="Bullet" id="2" name="Set gravity" sid="603546344098706" type="enemigo1">
-                            <param id="0" name="Gravity">enemigo1.Bullet.Gravity+500</param>
                         </action>
                         <action id="-11" name="Subtract from" sid="779567625506259" type="System">
                             <param id="0" name="Variable">velocidadEnemigos</param>
