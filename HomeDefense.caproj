@@ -272,7 +272,7 @@
         </object-type>
         <object-type name="TiledBackground5" sid="315876424086814">
             <plugin id="TiledBg" />
-            <texture />
+            <texture original-source="C:\Users\JuntoS\Desktop\HomeDefend\Nuevo Lienzo.png" />
         </object-type>
     </object-folder>
     <families />
